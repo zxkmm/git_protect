@@ -1,22 +1,25 @@
 mod git;
 mod util;
 
+use duct::cmd;
 use std::io::{self};
+use crate::util::run_command;
 
 fn main() -> io::Result<()> {
     let username = git::read_gitconfig()?;
-    let destination_repo = util::run_command("git", vec!["remote", "-v"])?;
+    let destination_repo = run_command("git", vec!["remote", "-v"])?;
+
     println!("---\nRun protected push");
     println!("---\nYou are: {}", username);
-    println!("---\nDestination repos are: \n{}", destination_repo);
+    println!("---\nDestination repos are:\n");
+    cmd!("git", "remote", "-v").run()?;
 
 
     let check_result = util::check_username_in_repo(&username, &destination_repo);
     match check_result {
         true => {
             println!("---\nLooks safe to push, pushing...");
-            let push_output = util::run_command("git", vec!["push"])?;
-            println!("---\n{}", push_output);
+            cmd!("git", "push").run()?;
 
         }
         false => {

@@ -7,4 +7,4 @@ edition = "2021"
 
 [dependencies]
 dirs = "5.0.1"
-
+duct = "0.13.7"
