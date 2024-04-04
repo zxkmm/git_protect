@@ -18,7 +18,7 @@ fn main() -> io::Result<()> {
     let check_result = util::check_username_in_repo(&username, &destination_repo);
     match check_result {
         true => {
-            println!("---\nLooks safe to push, pushing...\n");
+            println!("---\nLooks safe to push, pushing...\n---");
             cmd!("git", "push").run()?;
 
         }
