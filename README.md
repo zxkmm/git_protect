@@ -36,3 +36,6 @@ alias ppush='git_push_protect'
 ```
 # why rust
 I don't know how to write rust but i wanted to learn it, and this is my first rust program
+
+# warning
+not tested on windows but should be work.
