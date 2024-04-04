@@ -7,19 +7,21 @@ a tool to protect your git push from pushing into repos which isn't belong to yo
 ```
 cd ~
 mkdir apps
-cd apps
+mkdir apps/git_push_protect
+cd ~ 
 git clone https://github.com/zxkmm/git_push_protect.git
 cd git_push_protect
 cargo build --release
-cp ./target/release/git_push_protect ~/apps/
-sudo chmod +x ~/apps/git_push_protect
+cp ./target/release/git_push_protect ~/apps/git_push_protect
+sudo chmod +x ~/apps/git_push_protect/git_push_protect
 ```
 3. set apps into PATH
 ```
-echo 'export PATH=$PATH:~/apps' >> ~/.bashrc
-echo 'export PATH=$PATH:~/apps' >> ~/.zshrc
+echo 'export PATH=$PATH:~/apps/git_push_protect' >> ~/.bashrc
+echo 'export PATH=$PATH:~/apps/git_push_protect' >> ~/.zshrc
 source ~/.bashrc
-source ~/.bashrc
+source ~/.zshrc
+# or whatever shell you use
 ```
 4. next time, when you want push, use `git_push_protect` instead of `git push`.
 5. you can also set alias:
