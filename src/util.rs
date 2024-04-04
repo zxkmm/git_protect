@@ -1,22 +1,33 @@
-use std::process::Command;
 use std::str;
 
-pub fn run_command(cmd: &str, args: Vec<&str>) -> Result<String, std::io::Error> {
+use std::process::{Command, Stdio};
+use std::io::{BufRead, BufReader};
+
+pub fn run_command(cmd: &str, args: Vec<&str>) -> std::io::Result<()> {
     let mut command = Command::new(cmd);
 
     for arg in args {
         command.arg(arg);
     }
 
-    let output = command.output()?;
+    command.stdout(Stdio::piped());
+    let mut child = command.spawn()?;
+    let stdout = child.stdout.take().unwrap();
+    let reader = BufReader::new(stdout);
 
-    if output.status.success() {
-        let output_str = str::from_utf8(&output.stdout).unwrap();
-        Ok(output_str.to_string())
+    for line in reader.lines() {
+        println!("{}", line?);
+    }
+
+    let status = child.wait()?;
+
+    if status.success() {
+        Ok(())
     } else {
         Err(std::io::Error::new(std::io::ErrorKind::Other, "command failed"))
     }
 }
+
 
 pub fn check_username_in_repo(username: &str, destination_repo: &str) -> bool {
     destination_repo.contains(username)
