@@ -4,31 +4,31 @@ use std::fs::File;
 use std::path::PathBuf;
 
 pub fn read_gitconfig() -> io::Result<String> {
-    let home_dir = dirs::home_dir().expect("Home directory not found");
-    let mut gitconfig_path = PathBuf::from(home_dir);
-    gitconfig_path.push(".gitconfig");
+    let _home_dir_ = dirs::home_dir().expect("Home directory not found");
+    let mut _gitconfig_path_ = PathBuf::from(_home_dir_);
+    _gitconfig_path_.push(".gitconfig");
 
-    let display = gitconfig_path.display();
+    let _display_ = _gitconfig_path_.display();
 
-    let file = match File::open(&gitconfig_path) {
-        Err(why) => panic!("couldn't open {}: {}", display, why),
+    let _file_ = match File::open(&_gitconfig_path_) {
+        Err(why) => panic!("couldn't open {}: {}", _display_, why),
         Ok(file) => file,
     };
 
-    let reader = io::BufReader::new(file);
-    let mut username = String::new();
+    let _reader_ = io::BufReader::new(_file_);
+    let mut _username_ = String::new();
 
-    for line in reader.lines() {
+    for line in _reader_.lines() {
         let line = line?;
         if line.contains("name") {
             let parts: Vec<&str> = line.split('=').collect();
             if parts[0].trim() == "name" {
-                username = parts[1].trim().to_string();
+                _username_ = parts[1].trim().to_string();
                 break;
             }
         }
     }
 
-    Ok(username)
+    Ok(_username_)
 }
 
