@@ -11,14 +11,14 @@ fn main() -> io::Result<()> {
 
     println!("---\nRun protected push");
     println!("---\nYou are: {}", username);
-    println!("---\nDestination repos are:\n");
+    println!("---\nDestination repos are:");
     cmd!("git", "remote", "-v").run()?;
 
 
     let check_result = util::check_username_in_repo(&username, &destination_repo);
     match check_result {
         true => {
-            println!("---\nLooks safe to push, pushing...");
+            println!("---\nLooks safe to push, pushing...\n");
             cmd!("git", "push").run()?;
 
         }
