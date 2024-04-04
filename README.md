@@ -1,6 +1,12 @@
 # git_push_protect
 a tool to protect your git push from pushing into repos which isn't belong to you but you have write access.
 
+# screenshots
+Pushing into not your repo:
+![screenshots_push__forbid]()https://github.com/zxkmm/git_push_protect/blob/main/tools/img.png?raw=true
+Pushing into your own repo:
+
+
 # usage
 1. make sure you have rust and cargo installed (they should come together if you use package manager to install)
 2.
