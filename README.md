@@ -4,7 +4,9 @@ a tool to protect your git push from pushing into repos which isn't belong to yo
 # screenshots
 Pushing into not your repo:  
 
-![screenshots_push__forbid](https://github.com/zxkmm/git_push_protect/blob/main/tools/img.png?raw=true)
+![screenshots_push__forbid](https://github.com/zxkmm/git_push_protect/blob/main/tools/img.png?raw=true)   
+
+
 Pushing into your own repo:    
 
 ![screenshots_push_allowed](https://github.com/zxkmm/git_push_protect/blob/main/tools/img_1.png?raw=true)
