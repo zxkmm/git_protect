@@ -33,7 +33,9 @@ vi ~/.zshrc
 emacs ~/.zshrc
 # add the following line
 alias ppush='git_push_protect'
+alias gpush='git_push_protect'
 ```
+after that you can run ppush or gpush to use it.
 # why rust
 I don't know how to write rust but i wanted to learn it, and this is my first rust program
 
