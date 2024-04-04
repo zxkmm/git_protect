@@ -9,6 +9,7 @@ fn main() -> io::Result<()> {
     println!("---\nRun protected push");
     println!("---\nYou are: {}", username);
     println!("---\nDestination repos are: \n{}", destination_repo);
+    
 
     let check_result = util::check_username_in_repo(&username, &destination_repo);
     match check_result {
