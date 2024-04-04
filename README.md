@@ -33,8 +33,5 @@ vi ~/.zshrc
 emacs ~/.zshrc
 # add the following line
 alias ppush='git_push_protect'
-6. You can also totally cover and block `git push` command:
-```
-git config --global alias.push '!git_push_protect'
 ```
 
