@@ -55,5 +55,5 @@ I don't know how to write rust but i wanted to learn it, and this is my first ru
 # warning
 - not tested on windows but should be work.
 - If you are github or any other git host server user:
-    - Your user name of the host account must match the username your local git config. Because there's no way to detetct your destination host username (GitHub have an account username which isn't same with the real git username)
-    - Don't cinsider this tool as for "security" or "safety" usage. This is only for conscious check, it's not for pretecting from intentional attack.
+    - Your user name of the host account must match the username your local git config. Because there's no way to detetct your destination host username (gh cli client is too slow responding to fetch it) (GitHub have an account username which isn't same thing with the real git username)
+    - Don't cinsider this tool as for "security" or "safety" usage. This tool is only for conscious check, it's not for pretecting from intentional attack.
