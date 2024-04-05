@@ -53,4 +53,7 @@ after that you can run ppush or gpush to use it.
 I don't know how to write rust but i wanted to learn it, and this is my first rust program
 
 # warning
-not tested on windows but should be work.
+- not tested on windows but should be work.
+- If you are github or any other git host server user:
+    - Your user name of the host account must match the username your local git config. Because there's no way to detetct your destination host username (GitHub have an account username which isn't same with the real git username)
+    - Don't cinsider this tool as for "security" or "safety" usage. This is only for conscious check, it's not for pretecting from intentional attack.
