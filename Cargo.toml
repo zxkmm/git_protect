@@ -1,5 +1,5 @@
 [package]
-name = "git_push_protect"
+name = "git_protect"
 version = "0.1.0"
 edition = "2021"
 
