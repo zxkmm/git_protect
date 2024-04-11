@@ -56,7 +56,7 @@ emacs ~/.zshrc
 alias pgit='git_protect'
 alias gitp='git_protect'
 ```
-after that you can run ppush or gpush to use it.
+after that you can run pgit or gitp to use it, e.g.: `pgit push` or `pgit commit -m "message"`
 
 ## Method 2: protect only git push command
 - only protect git push command, e.g.: `gpush` or `ppush`
