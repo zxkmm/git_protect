@@ -13,8 +13,7 @@ fn main() -> io::Result<()> {
     let username = git::read_gitconfig()?;
     let destination_repo = run_command("git", vec!["remote", "-v"])?;
 
-    println!("--------\nRun protected push");
-    println!("--------\nYou are: {}", username);
+    println!("--------\nProtecting git, you are: {}", username);
     println!("--------\nDestination repos are:");
     cmd!("git", "remote", "-v").run()?;
 
@@ -24,13 +23,13 @@ fn main() -> io::Result<()> {
     let check_result = util::check_username_in_repo(&username, &destination_repo);
     match check_result {
         true => {
-            println!("--------\nLooks safe to push, pushing...\n--------");
             let mut combined_command = Command::new("git");
             combined_command.args(git_args);
+            println!("--------\nLooks safe, running: {:?}\n--------", combined_command);
             combined_command.spawn()?.wait()?;
         }
         false => {
-            println!("--------\nYou are pushing into not your own repo, ABORT.");
+            println!("--------\nYou are running in not your own repo, ABORT.");
         }
     }
 
