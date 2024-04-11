@@ -14,9 +14,8 @@ fn main() -> io::Result<()> {
     let destination_repo = run_command("git", vec!["remote", "-v"])?;
 
     println!("--------\nProtecting git, you are: {}", username);
-    println!("--------\nDestination repos are:");
+    println!("---\nDestination repos are:");
     cmd!("git", "remote", "-v").run()?;
-
     let args: Vec<String> = env::args().collect();
     let git_args = args[1..].to_vec();
 
@@ -25,11 +24,11 @@ fn main() -> io::Result<()> {
         true => {
             let mut combined_command = Command::new("git");
             combined_command.args(git_args);
-            println!("--------\nLooks safe, running: {:?}\n--------", combined_command);
+            println!("---\nLooks safe, running: {:?}\n--------", combined_command);
             combined_command.spawn()?.wait()?;
         }
         false => {
-            println!("--------\nYou are running in not your own repo, ABORT.");
+            println!("---\nYou are running in not your own repo, ABORT.");
         }
     }
 
