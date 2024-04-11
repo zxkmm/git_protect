@@ -11,12 +11,12 @@ You have several branches to choose from, they are having different features:
 ### screenshots
 Pushing into not your repo:
 
-
+![screenshots_push_allowed](https://github.com/zxkmm/git_push_protect/blob/main/tools/img_2.png?raw=true)
 
 
 Pushing into your own repo:
 
-
+![screenshots_push_allowed](https://github.com/zxkmm/git_push_protect/blob/main/tools/img_3.png?raw=true)
 
 
 ### usage
