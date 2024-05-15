@@ -9,12 +9,13 @@ You have several branches to choose from, they are having different features:
 - it will check if you are in the right repo before executing any git command
 
 ### screenshots
-Pushing into not your repo:
+
+Pushing into your own repo:
 
 ![screenshots_push_allowed1](https://github.com/zxkmm/git_push_protect/blob/cover_all_git_command/tools/img_2.png?raw=true)
 
 
-Pushing into your own repo:
+Pushing into not your repo:
 
 ![screenshots_push_forbid1](https://github.com/zxkmm/git_push_protect/blob/cover_all_git_command/tools/img_3.png?raw=true)
 
